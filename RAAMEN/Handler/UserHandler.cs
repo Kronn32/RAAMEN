@@ -30,15 +30,14 @@ namespace RAAMEN.Handler
             }
             return false;
         }
-
-        public static string getUserId(string Username, string Password)
+        public static bool updateUser(string Username, string Email, string Gender, string Password, string OldUsername, string OldPassword)
         {
-            return UserRepository.getUserId(Username, Password).ToString();
-        }
-
-        public static User getUser(int id)
-        {
-            return UserRepository.getUser(id);
+            if (UserController.updateUser(Username, Email, Gender, Password, OldPassword))
+            {
+                UserRepository.updateUser(Username, Email, Gender, OldUsername, OldPassword);
+                return true;
+            }
+            return false;
         }
     }
 }

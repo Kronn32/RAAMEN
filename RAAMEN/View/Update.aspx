@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateProfile.aspx.cs" Inherits="RAAMEN.View.UpdateProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="RAAMEN.View.Update" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
         <div>
             <asp:Label ID="UsernameLbl" runat="server" Text="Username"></asp:Label><br />
             <asp:TextBox ID="UsernameTxt" runat="server" AutoCompleteType="Disabled"></asp:TextBox><br />
-          
+
             <asp:Label ID="EmailLbl" runat="server" Text="Email"></asp:Label><br />
             <asp:TextBox ID="EmailTxt" runat="server" AutoCompleteType="Disabled"></asp:TextBox><br />
            

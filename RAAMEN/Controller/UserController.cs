@@ -74,5 +74,35 @@ namespace RAAMEN.Controller
 
             return false;
         }
+        public static bool updateUser(string Username, string Email, string Gender, string Password, string OldPassword)
+        {
+            bool username = false;
+            bool email = false;
+            bool gender = false;
+            bool password = false;
+
+            if(between5And15Characters(Username) && containLettersAndSpaceOnly(Username))
+            {
+                username = true;
+            }
+            if (Email.EndsWith(".com"))
+            {
+                email = true;
+            }
+            if (!Gender.Equals(""))
+            {
+                gender = true;
+            }
+            if (Password.Equals(OldPassword))
+            {
+                password = true;
+            }
+
+            if(username && email && gender && password)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

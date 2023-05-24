@@ -92,7 +92,7 @@
     <Content Include="View\LogIn.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="View\test.aspx" />
-    <Content Include="View\UpdateProfile.aspx" />
+    <Content Include="View\Update.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -162,12 +162,12 @@
     <Compile Include="View\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\UpdateProfile.aspx.cs">
-      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    <Compile Include="View\Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\UpdateProfile.aspx.designer.cs">
-      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    <Compile Include="View\Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

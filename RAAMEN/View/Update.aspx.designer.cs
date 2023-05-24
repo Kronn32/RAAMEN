@@ -11,7 +11,7 @@ namespace RAAMEN.View
 {
 
 
-    public partial class UpdateProfile
+    public partial class Update
     {
 
         /// <summary>

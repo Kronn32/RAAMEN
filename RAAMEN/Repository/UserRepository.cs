@@ -34,18 +34,17 @@ namespace RAAMEN.Repository
             return false;
         }
 
-        public static User getUser(int id)
+    public static void updateUser(string Username, string Email, string Gender, string OldUsername, string OldPassword)
         {
             DatabaseEntities db = new DatabaseEntities();
-            User u = db.Users.Find(id);
-            return u;
-        }
-
-        public static int getUserId(string Username, string Password)
-        {
-            DatabaseEntities db = new DatabaseEntities();
-            User u = (from x in db.Users where x.Username.Equals(Username) && x.Password.Equals(Password) select x).FirstOrDefault();
-            return u.Id;
+            User user = (from x in db.Users where x.Username.Equals(OldUsername) && x.Password.Equals(OldPassword) select x).FirstOrDefault();
+            if(user != null)
+            {
+                user.Username = Username;
+                user.Email = Email;
+                user.Gender = Gender;
+                db.SaveChanges();
+            }
         }
     }
 }
