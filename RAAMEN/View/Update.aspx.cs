@@ -1,4 +1,5 @@
 ﻿using RAAMEN.Handler;
+using RAAMEN.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,20 @@ namespace RAAMEN.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //string Username = Session["Username"].ToString();
+            //string Password = Session["Password"].ToString();
+            //User user = UserHandler.getUser(Username, Password);
+            //UsernameTxt.Text = Username;
+            //EmailTxt.Text = user.Email;
+            //if (user.Gender.Equals("Male"))
+            //{
+            //    MaleBtn.Checked = true;
+            //}
+            //else
+            //{
+            //    FemaleBtn.Checked = true;
+            //}
+            //PasswordTxt.Text = Password;
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e)
@@ -35,9 +49,9 @@ namespace RAAMEN.View
 
             if (UserHandler.updateUser(Username, Email, Gender, Password, OldUsername, OldPassword))
             {
-                StatusLbl.Text = "Profile updated succesfully";
                 Session["Username"] = Username;
                 Session["Password"] = Password;
+                StatusLbl.Text = "Profile updated succesfully";
             }
             else
             {

@@ -33,14 +33,13 @@ namespace RAAMEN.Controller
             }
             return false;
         }
-        public static bool createUser(int Role, string Username, string Email, string Gender, string Password, string ConfirmPassword)
+        public static bool createUser(int Role, string Username, string Email, string Gender, string Password, string ConfirmPassword, List<string> usedUsernames)
         {
             bool role = false;
             bool username = false;
             bool email = false;
             bool gender = false;
             bool pass = false;
-            List<string> usedUsernames = UserRepository.GetUsernames();
             bool uniqueName = uniqueUsername(usedUsernames, Username);
 
             if (Role != 0)
@@ -74,14 +73,15 @@ namespace RAAMEN.Controller
 
             return false;
         }
-        public static bool updateUser(string Username, string Email, string Gender, string Password, string OldPassword)
+        public static bool updateUser(string Username, string Email, string Gender, string Password, string OldPassword, List<string> usedUsernames)
         {
             bool username = false;
             bool email = false;
             bool gender = false;
             bool password = false;
+            bool uniqueName = uniqueUsername(usedUsernames, Username);
 
-            if(between5And15Characters(Username) && containLettersAndSpaceOnly(Username))
+            if (between5And15Characters(Username) && containLettersAndSpaceOnly(Username))
             {
                 username = true;
             }
