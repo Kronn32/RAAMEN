@@ -17,24 +17,11 @@ namespace RAAMEN.View
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
-            int Role = 0;
             string Username = UsernameTxt.Text;
             string Email = EmailTxt.Text;
             string Gender = "";
             string Password = PasswordTxt.Text;
             string ConfirmPassword = ConfirmPasswordTxt.Text;
-            if (BuyerBtn.Checked)
-            {
-                Role = 1;
-            }
-            else if (StaffBtn.Checked)
-            {
-                Role = 2;
-            }
-            else if (AdminBtn.Checked)
-            {
-                Role = 3;
-            }
 
             if (MaleBtn.Checked)
             {
@@ -45,7 +32,7 @@ namespace RAAMEN.View
                 Gender = "Female";
             }
 
-            if(UserHandler.createUser(Role, Username, Email, Gender, Password, ConfirmPassword))
+            if(UserHandler.createUser(Username, Email, Gender, Password, ConfirmPassword))
             {
                 Response.Redirect("test.aspx");
             }

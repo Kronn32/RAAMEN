@@ -12,12 +12,12 @@ namespace RAAMEN.Handler
 {
     public class UserHandler
     {
-        public static bool createUser(int Role, string Username, string Email, string Gender, string Password, string ConfirmPassword)
+        public static bool createUser(string Username, string Email, string Gender, string Password, string ConfirmPassword)
         {
             List<string> usedUsernames = UserRepository.GetUsernames();
-            if(UserController.createUser(Role, Username, Email, Gender, Password, ConfirmPassword, usedUsernames))
+            if(UserController.createUser(Username, Email, Gender, Password, ConfirmPassword, usedUsernames))
             {
-                UserRepository.createUser(Role, Username, Email, Gender, Password);
+                UserRepository.createUser(Username, Email, Gender, Password);
                 return true;
             }
             return false;

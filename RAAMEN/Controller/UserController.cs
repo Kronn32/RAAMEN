@@ -33,19 +33,14 @@ namespace RAAMEN.Controller
             }
             return false;
         }
-        public static bool createUser(int Role, string Username, string Email, string Gender, string Password, string ConfirmPassword, List<string> usedUsernames)
+        public static bool createUser(string Username, string Email, string Gender, string Password, string ConfirmPassword, List<string> usedUsernames)
         {
-            bool role = false;
             bool username = false;
             bool email = false;
             bool gender = false;
             bool pass = false;
             bool uniqueName = uniqueUsername(usedUsernames, Username);
 
-            if (Role != 0)
-            {
-                role = true;
-            }
             if (containLettersAndSpaceOnly(Username) && between5And15Characters(Username))
             {
                 username = true;
@@ -66,7 +61,7 @@ namespace RAAMEN.Controller
                 pass = true;
             }
 
-            if (role && username && email && gender && pass && uniqueName)
+            if (username && email && gender && pass && uniqueName)
             {
                 return true;
             }
