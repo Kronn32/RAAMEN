@@ -9,10 +9,10 @@ namespace RAAMEN.Repository
 {
     public class UserRepository
     {
-        public static void createUser(int Role, string Username, string Email, string Gender, string Password)
+        public static void createUser(string Username, string Email, string Gender, string Password)
         {
             DatabaseEntities db = new DatabaseEntities();
-            User user = UserFactory.createUser(Role, Username, Email, Gender, Password);
+            User user = UserFactory.createUser(Username, Email, Gender, Password);
             db.Users.Add(user);
             db.SaveChanges();
         }

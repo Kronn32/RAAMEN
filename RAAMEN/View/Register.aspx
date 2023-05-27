@@ -10,11 +10,6 @@
 <h2>Create Your Account</h2>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="RoleLbl" runat="server" Text="Role"></asp:Label><br />
-            <asp:RadioButton ID="BuyerBtn" Text="Buyer" runat="server" GroupName="Role" /><br />
-            <asp:RadioButton ID="StaffBtn" Text="Staff" runat="server" GroupName="Role" /><br />
-            <asp:RadioButton ID="AdminBtn" Text="Admin" runat="server" GroupName="Role" /><br />
-         
             <asp:Label ID="UsernameLbl" runat="server" Text="Username"></asp:Label><br />
             <asp:TextBox ID="UsernameTxt" runat="server" AutoCompleteType="Disabled"></asp:TextBox><br />
           

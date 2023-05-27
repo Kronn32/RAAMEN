@@ -8,10 +8,10 @@ namespace RAAMEN.Factory
 {
     public class UserFactory
     {
-        public static User createUser(int Role, string Username, string Email, string Gender, string Password)
+        public static User createUser(string Username, string Email, string Gender, string Password)
         {
             User user = new User();
-            user.RoleId = Role;
+            user.RoleId = 1;
             user.Username = Username;
             user.Email = Email;
             user.Gender = Gender;
