@@ -38,7 +38,7 @@ namespace RAAMEN.View
                 }
                 Session["Username"] = Username;
                 Session["Password"] = Password;
-                Response.Redirect("Update.aspx");
+                Response.Redirect("Home.aspx");
             }
             else
             {

@@ -22,7 +22,6 @@ namespace RAAMEN.Handler
             }
             return false;
         }
-
         public static bool logInUser(string Username, string Password, bool rememberMe)
         {
             if ((!Username.Equals("") && !Password.Equals("")) && UserRepository.findUser(Username, Password))
@@ -44,6 +43,10 @@ namespace RAAMEN.Handler
                 return true;
             }
             return false;
+        }
+        public static int getUserRole(string Username, string Password)
+        {
+            return UserRepository.getUserRole(Username, Password);
         }
     }
 }

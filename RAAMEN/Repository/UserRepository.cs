@@ -52,5 +52,11 @@ namespace RAAMEN.Repository
                 db.SaveChanges();
             }
         }
+        public static int getUserRole(string Username, string Password)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            int RoleId = (from x in db.Users where x.Username.Equals(Username) && x.Password.Equals(Password) select x.RoleId).FirstOrDefault();
+            return RoleId;
+        }
     }
 }
