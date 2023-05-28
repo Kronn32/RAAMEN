@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAAMEN.Handler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,25 @@ namespace RAAMEN
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int Roleid = UserHandler.getUserRole(Session["Username"].ToString(), Session["Password"].ToString());
+            if(Roleid == 1)
+            {
+                HomeNavbar.Visible = false;
+                ManageRamenNavbar.Visible = false;
+                OrderQueueNavbar.Visible = false;
+                ReportNavbar.Visible = false;
+            }
+            if(Roleid == 2)
+            {
+                OrderRamenNavbar.Visible = false;
+                HistoryNavbar.Visible = false;
+                ReportNavbar.Visible = false;
+            }
+            if(Roleid == 3)
+            {
+                HomeNavbar.Visible = false;
+                OrderRamenNavbar.Visible = false;
+            }
         }
     }
 }
