@@ -58,5 +58,19 @@ namespace RAAMEN.Repository
             int RoleId = (from x in db.Users where x.Username.Equals(Username) && x.Password.Equals(Password) select x.RoleId).FirstOrDefault();
             return RoleId;
         }
+
+        public static string getUserRoleName(string Username, string Password)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            int roleId = (from x in db.Users where x.Username.Equals(Username) && x.Password.Equals(Password) select x.RoleId).FirstOrDefault();
+            string roleName = (from x in db.Roles where x.Id.Equals(roleId) select x.Name).FirstOrDefault();
+            return roleName;
+        }
+        public static List<User> getRoleData(int RoleId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            List<User> users = (from x in db.Users where x.RoleId.Equals(RoleId) select x).ToList();
+            return users;
+        }
     }
 }
