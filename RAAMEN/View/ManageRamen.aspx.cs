@@ -13,5 +13,10 @@ namespace RAAMEN.View
         {
 
         }
+
+        protected void InsertBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InsertRamen.aspx");
+        }
     }
 }

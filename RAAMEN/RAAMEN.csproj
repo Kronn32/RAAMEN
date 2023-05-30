@@ -92,6 +92,7 @@
     <Content Include="StyleSheet.css" />
     <Content Include="View\History.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\InsertRamen.aspx" />
     <Content Include="View\LogIn.aspx" />
     <Content Include="View\ManageRamen.aspx" />
     <Content Include="View\OrderQueue.aspx" />
@@ -103,8 +104,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\RamenController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Factory\RamenFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\RamenHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Detail.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -147,6 +151,7 @@
       <DependentUpon>NavigationBar.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RamenRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="View\History.aspx.cs">
       <DependentUpon>History.aspx</DependentUpon>
@@ -161,6 +166,13 @@
     </Compile>
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertRamen.aspx.cs">
+      <DependentUpon>InsertRamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertRamen.aspx.designer.cs">
+      <DependentUpon>InsertRamen.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
