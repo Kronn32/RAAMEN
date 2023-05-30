@@ -13,20 +13,20 @@ namespace RAAMEN.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string Username = Session["Username"].ToString();
-            //string Password = Session["Password"].ToString();
-            //User user = UserHandler.getUser(Username, Password);
-            //UsernameTxt.Text = Username;
-            //EmailTxt.Text = user.Email;
-            //if (user.Gender.Equals("Male"))
-            //{
-            //    MaleBtn.Checked = true;
-            //}
-            //else
-            //{
-            //    FemaleBtn.Checked = true;
-            //}
-            //PasswordTxt.Text = Password;
+            string Username = Session["Username"].ToString();
+            string Password = Session["Password"].ToString();
+            User user = UserHandler.getUser(Username, Password);
+            UsernameTxt.Text = Username;
+            EmailTxt.Text = user.Email;
+            if (user.Gender.Equals("Male"))
+            {
+                MaleBtn.Checked = true;
+            }
+            else
+            {
+                FemaleBtn.Checked = true;
+            }
+            PasswordTxt.Text = Password;
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e)
