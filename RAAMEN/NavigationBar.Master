@@ -16,7 +16,7 @@
             <li id="OrderRamenNavbar" runat="server"><a href="OrderRamen.aspx">Order Ramen</a></li>
             <li id="ManageRamenNavbar" runat="server"><a href="ManageRamen.aspx">Manage Ramen</a></li>
             <li id="OrderQueueNavbar" runat="server"><a href="OrderQueue.aspx">Order Queue</a></li>
-            <li id="ProfileNavbar" runat="server"><a href="Update.aspx">Profile</a></li>
+            <li id="ProfileNavbar" runat="server"><a href="Profile.aspx">Profile</a></li>
             <li id="HistoryNavbar" runat="server"><a href="History.aspx">History</a></li>
             <li id="ReportNavbar" runat="server"><a href="Report.aspx">Report</a></li>
             <li id="LogOutNavbar" runat="server"><a href="LogIn.aspx">Log Out</a></li>

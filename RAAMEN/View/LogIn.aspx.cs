@@ -1,4 +1,5 @@
-﻿using RAAMEN.Handler;
+﻿using RAAMEN.Controller;
+using RAAMEN.Handler;
 using RAAMEN.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,13 @@ namespace RAAMEN.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["userInfo"] != null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
+            }
         }
 
         protected void LogInBtn_Click(object sender, EventArgs e)
@@ -26,8 +33,7 @@ namespace RAAMEN.View
                 rememberMe = true;
             }
 
-            if(UserHandler.logInUser(Username, Password, rememberMe)){
-
+            if(UserController.logInUser(Username, Password)){
                 if (rememberMe)
                 {
                     HttpCookie userInfo = new HttpCookie("userInfo");

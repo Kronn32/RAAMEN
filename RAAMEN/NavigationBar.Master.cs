@@ -1,4 +1,5 @@
-﻿using RAAMEN.Handler;
+﻿using RAAMEN.Controller;
+using RAAMEN.Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace RAAMEN
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Roleid = UserHandler.getUserRole(Session["Username"].ToString(), Session["Password"].ToString());
+            int Roleid = UserController.getUserRole(Session["Username"].ToString(), Session["Password"].ToString());
             if(Roleid == 1)
             {
                 HomeNavbar.Visible = false;

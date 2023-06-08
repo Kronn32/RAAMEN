@@ -1,4 +1,4 @@
-﻿using RAAMEN.Handler;
+﻿using RAAMEN.Controller;
 using RAAMEN.Model;
 using System;
 using System.Collections.Generic;
@@ -9,24 +9,31 @@ using System.Web.UI.WebControls;
 
 namespace RAAMEN.View
 {
-    public partial class Update : System.Web.UI.Page
+    public partial class Profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string Username = Session["Username"].ToString();
-            string Password = Session["Password"].ToString();
-            User user = UserHandler.getUser(Username, Password);
-            UsernameTxt.Text = Username;
-            EmailTxt.Text = user.Email;
-            if (user.Gender.Equals("Male"))
+            if (!IsPostBack)
             {
-                MaleBtn.Checked = true;
+                if (Session["Username"] == null)
+                {
+                    Response.Redirect("LogIn.aspx");
+                }
+                string Username = Session["Username"].ToString();
+                string Password = Session["Password"].ToString();
+                User user = UserController.getUser(Username, Password);
+                UsernameTxt.Text = Username;
+                EmailTxt.Text = user.Email;
+                if (user.Gender.Equals("Male"))
+                {
+                    MaleBtn.Checked = true;
+                }
+                else
+                {
+                    FemaleBtn.Checked = true;
+                }
+                PasswordTxt.Text = Password;
             }
-            else
-            {
-                FemaleBtn.Checked = true;
-            }
-            PasswordTxt.Text = Password;
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e)
@@ -42,16 +49,16 @@ namespace RAAMEN.View
             {
                 Gender = "Male";
             }
-            else if (FemaleBtn.Checked)
+            if (FemaleBtn.Checked)
             {
                 Gender = "Female";
             }
 
-            if (UserHandler.updateUser(Username, Email, Gender, Password, OldUsername, OldPassword))
+            if (UserController.updateUser(Username, Email, Gender, Password, OldUsername, OldPassword))
             {
                 Session["Username"] = Username;
                 Session["Password"] = Password;
-                StatusLbl.Text = "Profile updated succesfully";
+                StatusLbl.Text = "Profile updated successfully";
             }
             else
             {

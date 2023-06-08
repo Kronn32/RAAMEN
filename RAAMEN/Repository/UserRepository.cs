@@ -16,7 +16,7 @@ namespace RAAMEN.Repository
             db.Users.Add(user);
             db.SaveChanges();
         }
-        public static List<string> GetUsernames()
+        public static List<string> getUsernames()
         {
             DatabaseEntities db = new DatabaseEntities();
             List<string> users = (from x in db.Users select x.Username).ToList();

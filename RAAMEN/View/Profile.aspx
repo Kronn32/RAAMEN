@@ -1,15 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="RAAMEN.View.Update" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Update</title>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NavigationBar.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="RAAMEN.View.Profile" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Update Profile</h2>
-    <form id="form1" runat="server">
-        <div>
+    <div>
             <asp:Label ID="UsernameLbl" runat="server" Text="Username"></asp:Label><br />
             <asp:TextBox ID="UsernameTxt" runat="server" AutoCompleteType="Disabled"></asp:TextBox><br />
 
@@ -25,7 +19,5 @@
             <br />
             <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" /><br />
             <asp:Label ID="StatusLbl" runat="server" Text=""></asp:Label>
-        </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
