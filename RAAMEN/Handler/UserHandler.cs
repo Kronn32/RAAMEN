@@ -12,19 +12,17 @@ namespace RAAMEN.Handler
 {
     public class UserHandler
     {
-        public static bool createUser(string Username, string Email, string Gender, string Password, string ConfirmPassword)
+        public static void createUser(string Username, string Email, string Gender, string Password)
         {
-            List<string> usedUsernames = UserRepository.GetUsernames();
-            if(UserController.createUser(Username, Email, Gender, Password, ConfirmPassword, usedUsernames))
-            {
-                UserRepository.createUser(Username, Email, Gender, Password);
-                return true;
-            }
-            return false;
+            UserRepository.createUser(Username, Email, Gender, Password);
         }
-        public static bool logInUser(string Username, string Password, bool rememberMe)
+        public static List<string> getUsernames()
         {
-            if ((!Username.Equals("") && !Password.Equals("")) && UserRepository.findUser(Username, Password))
+            return UserRepository.getUsernames();
+        }
+        public static bool logInUser(string Username, string Password)
+        {
+            if (UserRepository.findUser(Username, Password))
             {
                 return true;
             }
@@ -34,15 +32,10 @@ namespace RAAMEN.Handler
         {
             return UserRepository.getUser(Username, Password);
         }
-        public static bool updateUser(string Username, string Email, string Gender, string Password, string OldUsername, string OldPassword)
+        public static bool updateUser(string Username, string Email, string Gender, string OldUsername, string OldPassword)
         {
-            List<string> usedUsernames = UserRepository.GetUsernames();
-            if (UserController.updateUser(Username, Email, Gender, Password, OldPassword, usedUsernames))
-            {
-                UserRepository.updateUser(Username, Email, Gender, OldUsername, OldPassword);
-                return true;
-            }
-            return false;
+            UserRepository.updateUser(Username, Email, Gender, OldUsername, OldPassword);
+            return true;
         }
         public static int getUserRole(string Username, string Password)
         {

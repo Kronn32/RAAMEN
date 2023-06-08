@@ -97,10 +97,10 @@
     <Content Include="View\ManageRamen.aspx" />
     <Content Include="View\OrderQueue.aspx" />
     <Content Include="View\OrderRamen.aspx" />
+    <Content Include="View\Profile.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="View\Report.aspx" />
     <Content Include="View\test.aspx" />
-    <Content Include="View\Update.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +202,13 @@
     <Compile Include="View\OrderRamen.aspx.designer.cs">
       <DependentUpon>OrderRamen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,13 +229,6 @@
     </Compile>
     <Compile Include="View\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\Update.aspx.cs">
-      <DependentUpon>Update.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Update.aspx.designer.cs">
-      <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

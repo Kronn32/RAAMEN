@@ -1,4 +1,5 @@
-﻿using RAAMEN.Handler;
+﻿using RAAMEN.Controller;
+using RAAMEN.Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,11 @@ namespace RAAMEN.View
                     Response.Redirect("LogIn.aspx");
                 }
             }
-            string RoleName = UserHandler.getUserRoleName(Session["Username"].ToString(), Session["Password"].ToString());
+            string RoleName = UserController.getUserRoleName(Session["Username"].ToString(), Session["Password"].ToString());
             RoleLbl.Text = RoleName;
-            CustomerGV.DataSource = UserHandler.getRoleData(1);
+            CustomerGV.DataSource = UserController.getRoleData(1);
             CustomerGV.DataBind();
-            StaffGV.DataSource = UserHandler.getRoleData(2);
+            StaffGV.DataSource = UserController.getRoleData(2);
             StaffGV.DataBind();
             if (RoleName.Equals("Buyer"))
             {

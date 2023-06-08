@@ -1,4 +1,5 @@
-﻿using RAAMEN.Handler;
+﻿using RAAMEN.Controller;
+using RAAMEN.Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,9 @@ namespace RAAMEN.View
                 Gender = "Female";
             }
 
-            if(UserHandler.createUser(Username, Email, Gender, Password, ConfirmPassword))
+            if(UserController.createUser(Username, Email, Gender, Password, ConfirmPassword))
             {
-                Response.Redirect("test.aspx");
+                Response.Redirect("LogIn.aspx");
             }
             else
             {

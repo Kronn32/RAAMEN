@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAAMEN.Handler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -33,7 +34,7 @@ namespace RAAMEN.Controller
 
             if(meatid && name && broth && price)
             {
-                return true;
+                RamenHandler.insertRamen(MeatId, Name, Broth, Price);
             }
             return false;
         }
