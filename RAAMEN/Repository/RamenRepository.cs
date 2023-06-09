@@ -16,5 +16,18 @@ namespace RAAMEN.Repository
             db.Ramen1.Add(ramen);
             db.SaveChanges();
         }
+        public static List<Ramen> getRamens()
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            List<Ramen> ramens = db.Ramen1.ToList();
+            return ramens;
+        }
+        public static void deleteRamen(int id)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            Ramen ramen = db.Ramen1.Find(id);
+            db.Ramen1.Remove(ramen);
+            db.SaveChanges();
+        }
     }
 }

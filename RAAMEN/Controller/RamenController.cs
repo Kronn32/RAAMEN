@@ -1,4 +1,5 @@
 ﻿using RAAMEN.Handler;
+using RAAMEN.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,14 @@ namespace RAAMEN.Controller
                 RamenHandler.insertRamen(MeatId, Name, Broth, Price);
             }
             return false;
+        }
+        public static List<Ramen> getRamens()
+        {
+            return RamenHandler.getRamens();
+        }
+        public static void deleteRamen(int id)
+        {
+            RamenHandler.deleteRamen(id);
         }
     }
 }
