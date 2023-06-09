@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="af4893d00cb34dcc8379dadb61abca4a" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="8.375" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Header" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Meat" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Ramen" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
@@ -16,7 +16,8 @@
         <AssociationConnector Association="DatabaseModel.FK_Header_User" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK_Ramen_Meat" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK_User_Role" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="DatabaseModel.Cart" Width="1.5" PointX="7.375" PointY="0.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

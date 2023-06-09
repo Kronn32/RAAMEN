@@ -33,5 +33,15 @@ namespace RAAMEN
                 OrderRamenNavbar.Visible = false;
             }
         }
+
+        protected void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            HttpCookie UserInfo = Request.Cookies["userInfo"];
+            if(UserInfo != null)
+            {
+                UserInfo.Expires = DateTime.Now.AddDays(-1);
+            }
+            Response.Redirect("LogIn.aspx");
+        }
     }
 }

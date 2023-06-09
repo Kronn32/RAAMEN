@@ -31,5 +31,6 @@ namespace RAAMEN.Model
         public virtual DbSet<Ramen> Ramen1 { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
     }
 }
