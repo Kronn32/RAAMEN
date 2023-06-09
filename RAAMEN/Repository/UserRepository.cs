@@ -72,5 +72,17 @@ namespace RAAMEN.Repository
             List<User> users = (from x in db.Users where x.RoleId.Equals(RoleId) select x).ToList();
             return users;
         }
+        public static int getUserId(string Username)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            int id = (from x in db.Users where x.Username.Equals(Username) select x.Id).FirstOrDefault();
+            return id;
+        }
+        public static int getAStaffId()
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            int id = (from x in db.Users where x.RoleId.Equals(2) select x.Id).FirstOrDefault();
+            return id;
+        }
     }
 }
