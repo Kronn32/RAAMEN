@@ -1,4 +1,5 @@
 ﻿using RAAMEN.Controller;
+using RAAMEN.Model;
 using RAAMEN.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ namespace RAAMEN.Handler
         {
             RamenRepository.insertRamen(MeatId, Name, Broth, Price);
             return "Ramen Added";
+        }
+        public static List<Ramen> getRamens()
+        {
+            return RamenRepository.getRamens();
+        }
+        public static void deleteRamen(int id)
+        {
+            RamenRepository.deleteRamen(id);
         }
     }
 }
