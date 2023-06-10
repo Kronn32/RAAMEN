@@ -49,5 +49,9 @@ namespace RAAMEN.Handler
         {
             return UserRepository.getRoleData(RoleId);
         }
+        public static int getUserId(string Username)
+        {
+            return UserRepository.getUserId(Username);
+        }
     }
 }

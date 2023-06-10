@@ -14,5 +14,9 @@ namespace RAAMEN.Handler
             List<Cart> c = CartRepository.getCartItems();
             DetailRepository.addDetails(c);
         }
+        public static List<Detail> getTrDetail(int HeaderId)
+        {
+            return DetailRepository.getTrDetail(HeaderId);
+        }
     }
 }

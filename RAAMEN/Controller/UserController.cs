@@ -125,5 +125,9 @@ namespace RAAMEN.Controller
         {
             return UserHandler.getRoleData(RoleId);
         }
+        public static int getUserId(string Username)
+        {
+            return UserHandler.getUserId(Username);
+        }
     }
 }
