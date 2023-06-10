@@ -29,5 +29,18 @@ namespace RAAMEN.Repository
             db.Ramen1.Remove(ramen);
             db.SaveChanges();
         }
+        public static void updateRamen(int ramenId, int MeatId, string RamenName, string Broth, string Price)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            Ramen ramen = (from x in db.Ramen1 where x.Id.Equals(ramenId) select x).FirstOrDefault();
+            if (ramen != null)
+            {
+                ramen.MeatId = MeatId;
+                ramen.Name = RamenName;
+                ramen.Broth = Broth;
+                ramen.Price = Price;
+                db.SaveChanges();
+            }
+        }
     }
 }

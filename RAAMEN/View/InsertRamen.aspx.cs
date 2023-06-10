@@ -1,4 +1,5 @@
-﻿using RAAMEN.Handler;
+﻿using RAAMEN.Controller;
+using RAAMEN.Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,20 @@ namespace RAAMEN.View
             string Broth = BrothTxt.Text;
             string Price = PriceTxt.Text;
 
-            StatusLbl.Text = RamenHandler.insertRamen(MeatId, Name, Broth, Price);
+            bool StatusRamen = RamenController.insertRamen(MeatId, Name, Broth, Price);
+            if(StatusRamen == true)
+            {
+                StatusLbl.Text = "Ramen Added!";
+            }
+            else
+            {
+                StatusLbl.Text = "Ramen Failed to be Added!";
+            }
+        }
+
+        protected void BackBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageRamen.aspx");
         }
     }
 }

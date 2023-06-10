@@ -35,7 +35,7 @@ namespace RAAMEN.Controller
 
             if(meatid && name && broth && price)
             {
-                RamenHandler.insertRamen(MeatId, Name, Broth, Price);
+                return RamenHandler.insertRamen(MeatId, Name, Broth, Price);
             }
             return false;
         }
@@ -46,6 +46,37 @@ namespace RAAMEN.Controller
         public static void deleteRamen(int id)
         {
             RamenHandler.deleteRamen(id);
+        }
+
+        public static bool updateRamen(int RamenId, int MeatId, string Name, string Broth, string Price)
+        {
+            bool meatid = false;
+            bool name = false;
+            bool broth = false;
+            bool price = false;
+
+            if (MeatId > 0 && MeatId < 6)
+            {
+                meatid = true;
+            }
+            if (Name.Contains("Ramen"))
+            {
+                name = true;
+            }
+            if (!Broth.Equals(""))
+            {
+                broth = true;
+            }
+            if (int.Parse(Price) >= 3000)
+            {
+                price = true;
+            }
+
+            if (meatid && name && broth && price)
+            {
+                return RamenHandler.updateRamen(RamenId, MeatId, Name, Broth, Price);
+            }
+            return false;
         }
     }
 }

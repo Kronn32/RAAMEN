@@ -18,6 +18,7 @@
         <asp:Label ID="PriceLbl" runat="server" Text="Price"></asp:Label><br />
         <asp:TextBox ID="PriceTxt" runat="server" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox><br /><br />
         <asp:Button ID="InsertBtn" runat="server" Text="Insert" OnClick="InsertBtn_Click" /><br />
+        <asp:Button ID="BackBtn" runat="server" Text="Back to Manage Page" onclick="BackBtn_Click"/>
         <asp:Label ID="StatusLbl" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>

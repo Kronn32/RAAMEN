@@ -10,10 +10,10 @@ namespace RAAMEN.Handler
 {
     public class RamenHandler
     {
-        public static string insertRamen(int MeatId, string Name, string Broth, string Price)
+        public static bool insertRamen(int MeatId, string Name, string Broth, string Price)
         {
             RamenRepository.insertRamen(MeatId, Name, Broth, Price);
-            return "Ramen Added";
+            return true;
         }
         public static List<Ramen> getRamens()
         {
@@ -22,6 +22,11 @@ namespace RAAMEN.Handler
         public static void deleteRamen(int id)
         {
             RamenRepository.deleteRamen(id);
+        }
+        public static bool updateRamen(int RamenId, int MeatId, string Name, string Broth, string Price)
+        {
+            RamenRepository.updateRamen(RamenId, MeatId, Name, Broth, Price);
+            return true;
         }
     }
 }
