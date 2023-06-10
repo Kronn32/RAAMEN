@@ -1,4 +1,5 @@
 ﻿using RAAMEN.Handler;
+using RAAMEN.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,14 @@ namespace RAAMEN.Controller
         public static void addHeader(string Username)
         {
             HeaderHandler.addHeader(Username);
+        }
+        public static List<Header> getAllHeaders()
+        {
+            return HeaderHandler.getAllHeaders();
+        }
+        public static List<Header> getUserHeader(int CustomerId)
+        {
+            return HeaderHandler.getUserHeader(CustomerId);
         }
     }
 }

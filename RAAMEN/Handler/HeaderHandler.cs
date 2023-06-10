@@ -1,4 +1,5 @@
-﻿using RAAMEN.Repository;
+﻿using RAAMEN.Model;
+using RAAMEN.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,14 @@ namespace RAAMEN.Handler
             int CustomerId = UserRepository.getUserId(Username);
             int StaffId = UserRepository.getAStaffId();
             HeaderRepository.addHeader(CustomerId, StaffId);
+        }
+        public static List<Header> getAllHeaders()
+        {
+            return HeaderRepository.getAllHeaders();
+        }
+        public static List<Header> getUserHeader(int CustomerId)
+        {
+            return HeaderRepository.getUserHeader(CustomerId);
         }
     }
 }

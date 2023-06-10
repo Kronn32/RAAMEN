@@ -11,16 +11,16 @@ namespace RAAMEN.View
 {
 
 
-    public partial class History
+    public partial class TransactionDetail
     {
 
         /// <summary>
-        /// HistoryGV control.
+        /// DetailGV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView HistoryGV;
+        protected global::System.Web.UI.WebControls.GridView DetailGV;
     }
 }

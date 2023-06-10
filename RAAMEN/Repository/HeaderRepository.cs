@@ -23,9 +23,21 @@ namespace RAAMEN.Repository
         public static void addHeader(int CustomerId, int StaffId)
         {
             DatabaseEntities db = new DatabaseEntities();
-            Header header = HeaderFactory.createHeader(CustomerId, StaffId, DateTime.Today);
+            Header header = HeaderFactory.createHeader(CustomerId, StaffId, DateTime.Now);
             db.Headers.Add(header);
             db.SaveChanges();
+        }
+        public static List<Header> getAllHeaders()
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            List<Header> headers = db.Headers.ToList();
+            return headers;
+        }
+        public static List<Header> getUserHeader(int CustomerId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            List<Header> userH = (from x in db.Headers where x.CustomerId.Equals(CustomerId) select x).ToList();
+            return userH;
         }
     }
 }

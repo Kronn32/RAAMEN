@@ -19,5 +19,11 @@ namespace RAAMEN.Repository
             }
             db.SaveChanges();
         }
+        public static List<Detail> getTrDetail(int HeaderId)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            List<Detail> d = (from x in db.Details where x.HeaderId.Equals(HeaderId) select x).ToList();
+            return d;
+        }
     }
 }
